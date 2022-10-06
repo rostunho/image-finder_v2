@@ -1,0 +1,13 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-right: -10px;
+  margin-bottom: -10px;
+}
+
+.photo-card {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

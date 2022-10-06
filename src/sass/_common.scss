@@ -1,1 +1,23 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+body {
+  font-family: 'Prosto One', cursive;
+  background-image: repeating-linear-gradient(to bottom,
+      rgb(250, 250, 250),
+      rgb(250, 250, 250) 10px,
+      rgb(240, 240, 240) 10px,
+      rgb(240, 240, 240) 11px);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+    
+
+
+
+

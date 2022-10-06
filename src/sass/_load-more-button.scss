@@ -1,0 +1,30 @@
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100px;
+}
+
+.load-more-button {
+  width: 250px;
+  height: 40px;
+
+  font-family: 'Prosto One';
+  cursor: pointer;
+  color: #fff;
+
+  background-color: rgb(0, 113, 179);
+}
+
+.load-more-button.is-hidden {
+  display: none;
+}
+
+.spinner {
+  margin-right: 15px;
+}
+
+.is-hidden {
+  display: none;
+}

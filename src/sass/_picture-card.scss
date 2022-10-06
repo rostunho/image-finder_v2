@@ -1,0 +1,36 @@
+.photo-card {
+  position: relative;
+}
+
+.stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  height: 50px;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-box {
+  width: 500px;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.stats-item {
+  margin-right: 15px;
+  color: white;
+  font-size: 12px;
+  line-height: 1.2;
+}
