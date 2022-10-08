@@ -24,16 +24,22 @@
           type="text"
           name="searchQuery"
           autocomplete="off"
-          placeholder="Search images..."
+          placeholder="Images..."
         />
         <button type="submit">Search</button>
       </form>
     </div>
-
     <div class="gallery">
-      <!-- Карточки изображений -->
+      <div class="spinner spinner--large is-hidden"></div>
+      <ul class="gallery-list">
+        <!-- Карточки изображений -->
+      </ul>
     </div>
-    <button type="button" class="load-more">Load more</button>
+
+    <button type="button" class="load-more is-hidden">
+      <span class="button-spinner is-hidden"></span>
+      <span class="button-desc">Load more</span>
+    </button>
 
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <!-- <include src="./partials/example.html"></include> -->
