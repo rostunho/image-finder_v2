@@ -18,27 +18,28 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <div class="search">
+    <div class="search-container">
       <form class="search-form" id="search-form">
         <input
+          class="search-form__input"
           type="text"
           name="searchQuery"
           autocomplete="off"
           placeholder="Images..."
         />
-        <button type="submit">Search</button>
+        <button class="search-form__button" type="submit">Search</button>
       </form>
     </div>
     <div class="gallery">
       <div class="spinner spinner--large is-hidden"></div>
-      <ul class="gallery-list">
+      <ul class="gallery__list">
         <!-- Карточки изображений -->
       </ul>
     </div>
 
-    <button type="button" class="load-more is-hidden">
-      <span class="button-spinner is-hidden"></span>
-      <span class="button-desc">Load more</span>
+    <button type="button" class="load-more-btn is-hidden">
+      <span class="load-more-btn__spinner is-hidden"></span>
+      <span class="load-more-btn__desc">Load more</span>
     </button>
 
     <!-- ❗️❗️❗️ Add partials like so for every page -->

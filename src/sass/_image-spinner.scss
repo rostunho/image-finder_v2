@@ -8,7 +8,7 @@
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    // border: 12px solid transparent;
+    
     border-top: 8px solid rgb(0, 0, 0, 0.3);
     border-left: 8px solid rgb(0, 0, 0, 0.3);
     border-bottom: 8px solid rgb(0, 0, 0, 0.3);
@@ -19,25 +19,6 @@
     animation-duration: 0.75s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
-    // &-small {
-    //     position: static;
-
-    //     width: 25px;
-    //     height: 25px;
-    //     margin-right: 30px;
-
-    //     border-radius: 50%;
-    //     border-top: 4px solid rgb(0, 0, 0, 0.3);
-    //     border-left: 4px solid rgb(0, 0, 0, 0.3);
-    //     border-bottom: 4px solid rgb(0, 0, 0, 0.3);
-    //     border-right: 4px solid #fff;
-
-    //         animation-name: spin-for-small;
-    //         animation-duration: 0.75s;
-    //         animation-timing-function: linear;
-    //         animation-iteration-count: infinite;
-    // }
 
     &--large {
         top: 50%;
@@ -55,16 +36,6 @@
 .is-hidden {
     display: none;
 }
-
-// @keyframes spin-for-small {
-//     0% {
-//         transform:  rotate(0deg);
-//     }
-
-//     100% {
-//         transform:  rotate(360deg);
-//     }
-// }
 
 @keyframes spin {
     0% {

@@ -1,12 +1,14 @@
 .photo-card {
   position: relative;
+  margin-right: 10px;
+  margin-bottom: 10px;
 
     &:hover {
         scale: 1.02;
       }
 }
 
-.image-box {
+.photo-card__image-box {
   width: 500px;
   height: 300px;
 
@@ -14,20 +16,17 @@
   justify-content: center;
   align-items: center;
 
-  object-fit: cover;
-
   overflow: hidden;
-
-  img {
-    display: block;
-      height: 100%;
-      width: 100%;
-    
-      object-fit: cover;
-  }
 }
 
-.stats {
+.photo-card__image {
+  display: block;
+  height: 100%;
+  width: 100%;    
+  object-fit: cover;
+}
+
+.photo-card__stats {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -42,7 +41,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.stats-item {
+.photo-card__stats-item{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -55,7 +54,7 @@
 
 }
 
-.stats-value {
+.photo-card__stats-value {
   margin-right: 15px;
   font-family: Consolas;
   color: white;

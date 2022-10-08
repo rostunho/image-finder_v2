@@ -2,25 +2,25 @@
 {{#each this}}
 <li class="photo-card">
   <div class="spinner"></div>
-  <div class="image-box">
-    <img class="image" src={{webformatURL}} data-source={{largeImageURL}} alt={{tags}} width="500"/>
+  <div class="photo-card__image-box">
+    <img class="photo-card__image" src={{webformatURL}} data-source={{largeImageURL}} alt={{tags}} width="500"/>
   </div>
-  <ul class="stats">
-    <li class="stats-item">
+  <ul class="photo-card__stats">
+    <li class="photo-card__stats-item">
         <i class="material-icons">thumb_up</i>
-        <p class="stats-value">{{likes}}</p>   
+        <p class="photo-card__stats-value">{{likes}}</p>   
     </li>
-    <li class="stats-item">
+    <li class="photo-card__stats-item">
         <i class="material-icons">visibility</i>
-        <p class="stats-value">{{views}}</p>
+        <p class="photo-card__stats-value">{{views}}</p>
     </li>
-    <li class="stats-item">
+    <li class="photo-card__stats-item">
         <i class="material-icons">comment</i>
-        <p class="stats-value">{{comments}}</p>
+        <p class="photo-card__stats-value">{{comments}}</p>
     </li>
-    <li class="stats-item">
+    <li class="photo-card__stats-item">
         <i class="material-icons">cloud_download</i>
-        <p class="stats-value">{{downloads}}</p>
+        <p class="photo-card__stats-value">{{downloads}}</p>
     </li>
     </ul>
 </li>

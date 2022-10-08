@@ -1,5 +1,5 @@
 
-.load-more {
+.load-more-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@
     }
 }
 
-.button-spinner {
+.load-more-btn__spinner {
   width: 25px;
   height: 25px;
   margin-right: 30px;
@@ -39,12 +39,8 @@
   animation-iteration-count: infinite;
 }
 
-.load-more.is-hidden {
-  display: none;
-}
-
-.is-hidden {
-  display: none;
+.is-hidden{
+  display: block;
 }
 
 @keyframes spin-for-small {

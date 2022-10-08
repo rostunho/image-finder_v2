@@ -23,24 +23,3 @@ export default class LoadMoreBtn {
     this.buttonRef.disabled = false;
   }
 }
-
-// const refs = {
-//   loadMoreBtn: document.querySelector('.load-more'),
-//   smallSpinner: document.querySelector('.spinner-small'),
-// };
-
-// function buttonActive() {
-//   refs.loadMoreBtn.classList.remove('is-hidden');
-// }
-
-// function loading() {
-//   refs.smallSpinner.classList.remove('is-hidden');
-//   refs.loadMoreBtn.children[1].textContent = 'loading';
-//   refs.loadMoreBtn.disabled = true;
-// }
-
-// function loaded() {
-//   refs.smallSpinner.classList.add('is-hidden');
-//   refs.loadMoreBtn.children[1].textContent = 'Load more';
-//   refs.loadMoreBtn.disabled = false;
-// }

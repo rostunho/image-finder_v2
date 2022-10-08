@@ -5,15 +5,13 @@ import galleryTmp from './templates/image-gallery.hbs';
 
 const refs = {
   form: document.querySelector('.search-form'),
-  input: document.querySelector('.search-form input'),
-  gallery: document.querySelector('.gallery-list'),
-  loadMoreBtn: document.querySelector('.load-more'),
-  //   buttonSpinner: document.querySelector('.button-spinner'),
+  input: document.querySelector('.search-form__input'),
+  gallery: document.querySelector('.gallery__list'),
+  loadMoreBtn: document.querySelector('.load-more-btn'),
 };
 
 const api = new API();
-const loadMoreBtn = new LoadMoreBtn('.load-more');
-// const spinner = new Spinner('.spinner');
+const loadMoreBtn = new LoadMoreBtn('.load-more-btn');
 const mainSpinner = new Spinner('.gallery > .spinner');
 const gallerySpinners = new Spinner('.photo-card .spinner');
 
@@ -28,12 +26,13 @@ async function onSubmit(event) {
   query = event.currentTarget.elements.searchQuery.value;
 
   refs.gallery.innerHTML = '';
+  loadMoreBtn.hide();
   mainSpinner.run();
 
   await api.fetchNewCollection(query).then(renderGalleryMarkup);
 
-  loadMoreBtn.show();
   inputReset();
+  loadMoreBtn.show();
 }
 
 async function onLoadMore() {
