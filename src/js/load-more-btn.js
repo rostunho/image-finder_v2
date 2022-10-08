@@ -1,27 +1,26 @@
 export default class LoadMoreBtn {
-  constructor(buttonRef, spinnerRef) {
-    this.button = buttonRef;
-    this.spinner = spinnerRef;
+  constructor(buttonSelector) {
+    this.buttonRef = document.querySelector(buttonSelector);
   }
 
   show() {
-    this.button.classList.remove('is-hidden');
+    this.buttonRef.classList.remove('is-hidden');
   }
 
   hide() {
-    this.button.classList.add('is-hidden');
+    this.buttonRef.classList.add('is-hidden');
   }
 
   loading() {
-    this.spinner.classList.remove('is-hidden');
-    this.button.children[1].textContent = 'loading';
-    this.button.disabled = true;
+    this.buttonRef.children[0].classList.remove('is-hidden');
+    this.buttonRef.children[1].textContent = 'loading';
+    this.buttonRef.disabled = true;
   }
 
   loaded() {
-    this.spinner.classList.add('is-hidden');
-    this.button.children[1].textContent = 'Load more';
-    this.button.disabled = false;
+    this.buttonRef.children[0].classList.add('is-hidden');
+    this.buttonRef.children[1].textContent = 'Load more';
+    this.buttonRef.disabled = false;
   }
 }
 
