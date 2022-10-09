@@ -11,9 +11,9 @@ export default class Spinner {
     document.querySelector(this.spinner).classList.add('is-hidden');
   }
 
-  runAll() {
-    document.querySelector(this.spinner).classList.remove('is-hidden');
-  }
+  // runAll() {
+  //   document.querySelector(this.spinner).classList.remove('is-hidden');
+  // }
 
   stopAll() {
     const spinnersRef = document.querySelectorAll(this.spinner);
