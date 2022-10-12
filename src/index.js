@@ -2,7 +2,7 @@ import API from './js/image-api-service';
 import LoadMoreBtn from './js/load-more-btn.js';
 import Spinner from './js/image-spinner';
 import galleryTmp from './templates/image-gallery.hbs';
-import sliderHandler from './js/slider.js';
+import { runSlider, stopSlider } from './js/slider.js';
 
 const refs = {
   form: document.querySelector('.search-form'),
@@ -49,18 +49,18 @@ async function createGallery(data) {
   const markup = await galleryTmp(data);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
   gallerySpinners.stopAll();
-  addListenersToCards();
+  runSlider('.photo-card');
 }
 
 function inputReset() {
   refs.input.value = '';
 }
 
-function addListenersToCards() {
-  const cardsRefs = document.querySelectorAll('.photo-card');
-  console.log(cardsRefs);
+// function addListenersToCards() {
+//   const cardsRefs = document.querySelectorAll('.photo-card');
+//   console.log(cardsRefs);
 
-  cardsRefs.forEach(card => {
-    card.addEventListener('click', sliderHandler);
-  });
-}
+//   cardsRefs.forEach(card => {
+//     card.addEventListener('click', sliderHandler);
+//   });
+// }
