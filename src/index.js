@@ -49,7 +49,7 @@ async function createGallery(data) {
   const markup = await galleryTmp(data);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
   gallerySpinners.stopAll();
-  runSlider('.photo-card');
+  runSlider();
 }
 
 function inputReset() {

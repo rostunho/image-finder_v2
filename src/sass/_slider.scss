@@ -15,9 +15,10 @@
     width: 100%;
     height: 100%;  
 
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
+}
+
+.slider__image-container {
+    overflow: visible;
 }
 
 .slider__image-thumb {
@@ -26,7 +27,7 @@
     width: 1280px; 
     
     display: flex;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
 
     top: 50%;
@@ -43,6 +44,8 @@
 }
 
 .slider__buttons {
+    position: absolute;
+    z-index: 160;
     width: 100%;
     height: 100%;
     display: flex;
@@ -54,7 +57,7 @@
 .slider__overlay {
     position: fixed;
     z-index: 110;
-    opacity: 0.5;
+    opacity: 0.7;
 
     width: 100vw;
     height: 100vh;
