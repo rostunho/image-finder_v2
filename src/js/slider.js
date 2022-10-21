@@ -11,6 +11,8 @@ let rightImage = null;
 
 let leftButtonRef = null;
 let rightButtonRef = null;
+let closeButtonRef = null;
+let backdropRef = null;
 
 export function runSlider() {
   const cards = document.querySelectorAll('.photo-card');
@@ -83,9 +85,9 @@ function renderLeftImage(DOMElement) {
     source: DOMElement.children[1].firstElementChild.dataset.source,
     subClass: 'slider__image--left',
     alt: DOMElement.children[1].firstElementChild.dataset.alt,
-    translateX: '-103%',
+    translateX: '-200%',
     zIndex: 140,
-    opacity: 0.5,
+    opacity: 0,
   };
 
   const innerContainer = document.querySelector('.slider__image-container');
@@ -103,9 +105,9 @@ function renderRightImage(DOMElement) {
     source: DOMElement.children[1].firstElementChild.dataset.source,
     subClass: 'slider__image--right',
     alt: DOMElement.children[1].firstElementChild.dataset.alt,
-    translateX: '103%',
+    translateX: '200%',
     zIndex: 145,
-    opacity: 0.5,
+    opacity: 0,
   };
 
   const innerContainer = document.querySelector('.slider__image-container');
@@ -116,17 +118,22 @@ function renderRightImage(DOMElement) {
 function activateSliderButtons() {
   leftButtonRef = document.querySelector('.slider__button--left');
   rightButtonRef = document.querySelector('.slider__button--right');
+  closeButtonRef = document.querySelector('.slider__button--close');
+  backdropRef = document.querySelector('.slider__image-container');
 
   if (!leftDOMElement) {
     leftButtonRef.disabled = true;
   }
-
   if (!rightDOMElement) {
     rightButtonRef.disabled = true;
   }
 
   leftButtonRef.addEventListener('click', moveSliderToLeft);
   rightButtonRef.addEventListener('click', moveSliderToRight);
+  closeButtonRef.addEventListener('click', stopSlider);
+  document.body.addEventListener('keydown', onEscPress);
+  document.body.addEventListener('keydown', onErrowsPress);
+  backdropRef.addEventListener('click', onBackdropClick);
 }
 
 function moveSliderToLeft() {
@@ -135,12 +142,12 @@ function moveSliderToLeft() {
   const rightCardRef = document.querySelector('.slider__image--right');
 
   if (rightCardRef) {
-    rightCardRef.style.transform = 'translateX(206%)';
+    rightCardRef.style.transform = 'translateX(400%)';
     rightCardRef.style.opacity = 0;
   }
 
-  mainCardRef.style.transform = 'translateX(103%)';
-  mainCardRef.style.opacity = 0.5;
+  mainCardRef.style.transform = 'translateX(200%)';
+  mainCardRef.style.opacity = 0;
   leftCardRef.style.transform = 'translateX(0)';
   leftCardRef.style.opacity = 1;
 
@@ -174,11 +181,11 @@ function moveSliderToRight() {
   const rightCardRef = document.querySelector('.slider__image--right');
 
   if (leftCardRef) {
-    leftCardRef.style.transform = 'translateX(-206%)';
+    leftCardRef.style.transform = 'translateX(-400%)';
     leftCardRef.style.opacity = 0;
   }
-  mainCardRef.style.transform = 'translateX(-103%)';
-  mainCardRef.style.opacity = 0.5;
+  mainCardRef.style.transform = 'translateX(-200%)';
+  mainCardRef.style.opacity = 0;
   rightCardRef.style.transform = 'translateX(0)';
   rightCardRef.style.opacity = 1;
 
@@ -203,6 +210,45 @@ function moveSliderToRight() {
   if (leftButtonRef.disabled) {
     leftButtonRef.disabled = false;
   }
+}
+
+function onEscPress(event) {
+  if (event.code === 'Escape') {
+    stopSlider();
+  }
+}
+
+function onErrowsPress(event) {
+  if (event.code === 'ArrowLeft' && !leftButtonRef.disabled) {
+    moveSliderToLeft();
+  }
+
+  if (event.code === 'ArrowRight' && !rightButtonRef.disabled) {
+    moveSliderToRight();
+  }
+}
+
+function onBackdropClick(event) {
+  console.log(event.target);
+  if (event.target === event.currentTarget) {
+    stopSlider();
+  }
+}
+
+function stopSlider() {
+  document.querySelector('.slider').classList.add('is-hidden');
+  document.querySelector('.slider').innerHTML = '';
+
+  leftButtonRef.removeEventListener('click', moveSliderToLeft);
+  rightButtonRef.removeEventListener('click', moveSliderToRight);
+  closeButtonRef.removeEventListener('click', stopSlider);
+  document.body.removeEventListener('keydown', onEscPress);
+  document.body.removeEventListener('keydown', onErrowsPress);
+  backdropRef.removeEventListener('click', onBackdropClick);
+
+  mainDOMElement = null;
+  leftDOMElement = null;
+  rightDOMElement = null;
 }
 
 ///////////////////////////////////////////////////////
