@@ -27,6 +27,7 @@ function sliderHandler(event) {
   setDOMElements(event);
   renderImages();
   activateSliderButtons();
+  document.body.style.overflow = 'hidden';
 }
 
 function renderSliderContainer(sliderSelector) {
@@ -245,6 +246,7 @@ function stopSlider() {
   document.body.removeEventListener('keydown', onEscPress);
   document.body.removeEventListener('keydown', onErrowsPress);
   backdropRef.removeEventListener('click', onBackdropClick);
+  document.body.style.overflow = 'visible';
 
   mainDOMElement = null;
   leftDOMElement = null;

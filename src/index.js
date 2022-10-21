@@ -40,6 +40,7 @@ async function onLoadMore() {
   loadMoreBtn.loading();
   await api.fetchNextCollection(query).then(createGallery);
   loadMoreBtn.loaded();
+  loadMoreBtn.scroll();
   inputReset();
 }
 

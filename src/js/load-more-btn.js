@@ -22,4 +22,11 @@ export default class LoadMoreBtn {
     this.buttonRef.children[1].textContent = 'Load more';
     this.buttonRef.disabled = false;
   }
+
+  scroll() {
+    this.buttonRef.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+    });
+  }
 }
